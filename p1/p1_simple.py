@@ -59,8 +59,6 @@ def simple_heuristic(file_path):
     df = pandas.read_csv(file_path)
 
     for passenger_index, passenger in df.iterrows():
-        print 1
-        #
-        # Your code here
-        #
+        predictions[passenger["PassengerId"]] = (passenger["Sex"] == "female")
+
     return predictions
